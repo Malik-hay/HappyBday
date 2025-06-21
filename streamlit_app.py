@@ -26,4 +26,6 @@ elif st.session_state.page == "isi":
     nama = st.session_state.nama
     tgl_lahir = st.session_state.tgl_lahir
     hari_ini = date.today()
-    umur = hari_i_
+    umur = hari_ini.year - tgl_lahir.year - ((hari_ini.month, hari_ini.day) < (tgl_lahir.month, tgl_lahir.day))
+
+    st.success("
