@@ -42,9 +42,9 @@ elif st.session_state.page == "isi":
     st.markdown(f"""
         <div style="text-align: center; max-width: 600px; margin: auto;">
             <h3>Selamat Datang Yang Mulia Kanjeng Ratu {nama}! </h3>
-            <p>Hari ini kamu berusia <strong>{umur} </p>
+            <p>Selamat Ulang Tahun yang ke- <strong>{umur} </p>
             <p>Semoga kamu selalu sehat, bahagia, dan dikelilingi hal-hal baik.</p>
-            <p>Terus semangat menjalani hari ya!<br>Kamu berharga dan nggak sendirian 🤍</p>
+            <p>Terus semangat menjalani hari ya!<br>Kamu berharga dan nggak sendirian </p>
             <p><em>— dari seseorang yang peduli.</em></p>
         </div>
     """, unsafe_allow_html=True)
