@@ -3,11 +3,9 @@ from datetime import date
 
 st.set_page_config(page_title="Surat untuk Kamu", page_icon="💌", layout="centered")
 
-# Inisialisasi state
 if "page" not in st.session_state:
     st.session_state.page = "pembuka"
 
-# CSS untuk kasih jarak & centering text input
 st.markdown("""
     <style>
         .stTextInput > div > div,
@@ -20,7 +18,6 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Halaman Pembuka
 if st.session_state.page == "pembuka":
     st.markdown("<h1 style='text-align:center;'>💌 Selamat Datang!</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align:center;'>Masukkan nama dan tanggal lahirmu ya 👇</p>", unsafe_allow_html=True)
@@ -34,7 +31,6 @@ if st.session_state.page == "pembuka":
             st.session_state.tgl_lahir = tgl_lahir
             st.session_state.page = "isi"
 
-# Halaman Isi (Surat)
 elif st.session_state.page == "isi":
     nama = st.session_state.nama
     tgl_lahir = st.session_state.tgl_lahir
@@ -43,16 +39,15 @@ elif st.session_state.page == "isi":
 
     st.success("📬 Ini suratnya:")
 
-        st.markdown(f"""
-    <div style="text-align: center; max-width: 600px; margin: auto;">
-        <h3>Hai {nama}! 👋</h3>
-        <p>Hari ini kamu berusia <strong>{umur} tahun</strong> 🎉</p>
-        <p>Semoga kamu selalu sehat, bahagia, dan dikelilingi hal-hal baik.</p>
-        <p>Terus semangat menjalani hari ya!<br>Kamu berharga dan nggak sendirian 🤍</p>
-        <p><em>— dari seseorang yang peduli.</em></p>
-    </div>
+    st.markdown(f"""
+        <div style="text-align: center; max-width: 600px; margin: auto;">
+            <h3>Hai {nama}! 👋</h3>
+            <p>Hari ini kamu berusia <strong>{umur} tahun</strong> 🎉</p>
+            <p>Semoga kamu selalu sehat, bahagia, dan dikelilingi hal-hal baik.</p>
+            <p>Terus semangat menjalani hari ya!<br>Kamu berharga dan nggak sendirian 🤍</p>
+            <p><em>— dari seseorang yang peduli.</em></p>
+        </div>
     """, unsafe_allow_html=True)
-
 
     if st.button("Kembali ke Halaman Awal"):
         st.session_state.page = "pembuka"
