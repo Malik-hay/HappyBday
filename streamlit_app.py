@@ -6,6 +6,7 @@ st.set_page_config(page_title="Surat untuk Kamu", page_icon="💌", layout="cent
 if "page" not in st.session_state:
     st.session_state.page = "pembuka"
 
+# CSS dasar
 st.markdown("""
     <style>
         .stTextInput > div > div,
@@ -40,13 +41,33 @@ elif st.session_state.page == "isi":
     st.success("📬 Ini suratnya:")
 
     st.markdown(f"""
-        <div style="text-align: center; max-width: 600px; margin: auto;">
-            <h3>Selamat Datang Yang Mulia Kanjeng Ratu {nama}! </h3>
-            <p>Selamat Ulang Tahun yang ke- <strong>{umur} </p>
-            <p>Semoga kamu selalu sehat, bahagia, dan dikelilingi hal-hal baik.</p>
-            <p>Terus semangat menjalani hari ya!<br>Kamu berharga dan nggak sendirian </p>
-            <p><em>— dari seseorang yang peduli.</em></p>
-        </div>
+    <div style="
+        background-image: url('https://i.imgur.com/O28hWzv.png');
+        background-size: 100% auto;
+        background-repeat: repeat-y;
+        background-position: top center;
+        padding: 60px 30px;
+        border-radius: 12px;
+        text-align: center;
+        max-width: 800px;
+        margin: auto;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    ">
+        <h3>Hai {nama}! 👋</h3>
+        <p>Hari ini kamu berusia <strong>{umur} tahun</strong> 🎉</p>
+        <p>
+        Semoga kamu selalu sehat, bahagia, dan dikelilingi hal-hal baik.  
+        Terus semangat menjalani hari ya!  
+        Kamu berharga dan nggak sendirian 🤍  
+        </p>
+
+        <p>
+        (Isi surat panjang bisa ditaruh di sini, paragraf tambahan sebanyak yang kamu mau...)  
+        Bisa sampai ratusan kata, dan background akan tetap ikut memanjang.
+        </p>
+
+        <p><em>— dari seseorang yang peduli.</em></p>
+    </div>
     """, unsafe_allow_html=True)
 
     if st.button("Kembali ke Halaman Awal"):
